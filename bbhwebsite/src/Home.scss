@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@900&display=swap');
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow-y: scroll;
+    
+    .patrocinadores {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        margin: 0;
+
+        ul {
+            color: #0669DE;
+            list-style-type: none;
+            padding: none !important;
+
+            li {
+                padding: 0 !important;
+                margin: 0 !important; 
+            }
+        }
+    }
+
+    nav {
+        height: 13%;
+        display: flex;
+        align-items: center;
+        background: #5001B3;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+
+
+        span{
+            left: 3%;
+            position: absolute;
+        }
+
+    }
+
+    .header {
+        height: 30%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+
+        @media only screen and (max-width: 1000px) {
+            height: 40%;       
+        }
+
+        @media only screen and (max-width: 800px) {
+            height: 60%;       
+        }
+        
+        &--image {
+            height: 95% !important;
+            width: auto;
+            opacity: 50%;
+            position: absolute;
+            bottom: 2%;
+
+            @media only screen and (max-width: 1000px) {
+                bottom: 5%;
+                height: 90% !important;       
+            }
+
+            @media only screen and (max-width: 800px) {
+                bottom: 25%;
+                height: 50% !important;       
+            }
+
+            @media only screen and (max-width: 600px) {
+                bottom: 30%;
+                height: 40% !important;       
+            }
+        }
+        
+
+        &--participantes {
+            background: white;
+            width: 90%;
+            height: auto;
+            -webkit-box-shadow: 0px -18px 24px 0px rgba(255,255,255,1);
+            -moz-box-shadow: 0px -18px 24px 0px rgba(255,255,255,1);
+            box-shadow: 0px -18px 24px 0px rgba(255,255,255,1);
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            @media only screen and (max-width: 1000px) {
+                justify-content: flex-start;  
+            }
+
+            &--nome {
+                background: white;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                font-family: Arial;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 8vw;
+                letter-spacing: 3px;
+                display: flex;
+                justify-content: center;
+                opacity: 0;
+                
+
+ 
+                span {
+                    margin-top: 2%;
+                    color: #5001B3;
+                    position: absolute;
+
+                                    /* Define the transition effect for opacity and transform properties */
+                transition: opacity 0.3s ease, transform 0.3s ease;
+
+                    @media only screen and (max-width: 900px) {
+                        font-size: 8vw;
+                        bottom: 50%;
+                    }
+                }
+            }
+
+            .participante {
+                width: 3vw;
+                height: 100%;
+                z-index: 3;
+
+                @media only screen and (max-width: 1000px) {
+                    width: 5vw;
+                }
+
+                @media only screen and (max-width: 800px) {
+                    width: 7vw;
+                }
+
+                &-avatar {
+                    width: 100%;
+                    height: 50%;
+                    transition: transform 0.1s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        cursor:pointer;
+                        transition: transform 0.1s;
+                    }
+
+                    &-image {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        aspect-ratio: 1/1;
+                        
+
+                        img {
+                            height: 70px;
+                            width: 70px;
+                            aspect-ratio: 1/1;
+                            object-fit: cover !important;
+                            object-position: top 15% !important;
+                            opacity: 100%;
+                            padding-top: 80%;
+                            
+                        }
+                    }
+                }
+
+                &-status {
+                    font-size: 10px;
+                    width: 200;
+                    background: orange;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+
+    /* State when name is set and the div should be visible */
+    .header--participantes--nome.visible {
+        /* Final state: fully opaque and in the normal position */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
