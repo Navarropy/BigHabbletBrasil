@@ -12,8 +12,9 @@ function Home() {
     useEffect(() => {
       const fetchContestants = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:5000/contestants');
+          const response = await fetch('http://193.31.31.105:25709/contestants');
           if (!response.ok) {
+            console.log(response)
             throw new Error('Failed to fetch contestants');
           }
           const data = await response.json();
